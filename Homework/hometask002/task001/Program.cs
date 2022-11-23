@@ -5,7 +5,7 @@
 
 int number = 918;
 
-if(number >= 100)
+if (number >= 100)
 {
     Console.WriteLine (number / 10 % 10);
 }
