@@ -3,7 +3,7 @@
 // 782 -> 8
 // 918 -> 1
 
-int number = 98;
+int number = 918;
 
 if(number >= 100)
 {
