@@ -6,7 +6,7 @@
 Console.WriteLine("Введите номер дня недели");
 int day = int.Parse(Console.ReadLine()!);
 
-while (day <= 7)
+if (day <= 7)
 {
     if (day >= 1 && day <= 5)
     {
@@ -16,7 +16,6 @@ while (day <= 7)
     {
         Console.WriteLine("да");
     }
-    break;
 }
 
 
