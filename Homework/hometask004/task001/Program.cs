@@ -12,7 +12,7 @@
   int numberN = 1;
   for (int i = 0; i < B; i++) 
   {
-   numberN *= A;
+   numberN = numberN * A;
   }
 
   Console.WriteLine("{0} ^ {1} = {2}", A, B, numberN);
