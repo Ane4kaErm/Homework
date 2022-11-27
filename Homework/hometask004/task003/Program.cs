@@ -5,31 +5,35 @@
 
 
 
-void FillArray(int[] collection)
+int[] CreateArray(int count)
 {
-    int size = collection.Length;
+  return new int[count];
+}
+
+void Fill(int[] array, int min, int max)
+{
+    int size = array.Length;
     for (int i = 0; i < size; i++)
     {
-        collection[i] = Random.Shared.Next(1, 8);
-        
+        array[i] = Random.Shared.Next(min, max);
     }
 }
 
-string PrintArray(int[] numbers)
+string PrintGood(int[] array)
 {
-    int size = numbers.Length;
-    int i = 0;
-    string result = "[ ";
+  int size = array.Length;
+  int i = 0;
+  string result = "[ ";
 
-    while (i < size)
-    {
-        result += ($"{numbers[i]}", 3);
-        i++;
-    }
-    return result + "]";
+  while (i < size)
+  {
+    result += ($"{array[i]} ");
+    i++;
+  }
+  return result + "]";
 }
 
-int[] array = new int[8];
-FillArray(array);
-PrintArray(array);
 
+int [] collection = CreateArray (8);
+Fill(collection, 1, 9);
+Console.WriteLine(PrintGood(collection));
