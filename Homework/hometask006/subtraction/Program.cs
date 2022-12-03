@@ -31,6 +31,20 @@ int[] Sub(int[] f, int[] g)
   return result;
 }
 
+String Print(int[] f)
+{
+  string output = String.Empty;
+  for(int i=0; i<f.Length; i++)
+  {
+    if(f[i] != 0) output += $"{f[i]}*x^{i} + ";
+  }
+
+  return output;
+}
+
+Console.WriteLine(Print(x));
+Console.WriteLine(Print(y));
 int[] s = Sub(x, y);
-for (int i = 0; i<s.Length;i++) Console.Write($"{s[i]} ");
+Console.WriteLine(Print(s));
+// for (int i = 0; i<s.Length;i++) Console.Write($"{s[i]} ");
 System.Console.WriteLine();
