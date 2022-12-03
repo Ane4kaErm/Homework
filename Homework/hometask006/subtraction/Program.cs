@@ -36,7 +36,8 @@ String Print(int[] f)
   string output = String.Empty;
   for(int i=0; i<f.Length; i++)
   {
-    if(f[i] != 0) output += $"{f[i]}*x^{i} + ";
+    if(f[i] != 0) { output += $"{f[i]}*x^{i}"; }
+    if(f[i] != 0 && i < f.Length -1) output += " + ";
   }
 
   return output;
