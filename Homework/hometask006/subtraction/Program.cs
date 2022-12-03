@@ -1,5 +1,5 @@
 ﻿int[] x = { 1, 0, 0, 0, -9, -6 };
-int[] y = { 0, 1, -2, -5, 0, 0, 7, 3 };
+int[] y = { 1, 1, -2, -5, 0, 0, 7, 3 };
 
 int[] Sub(int[] f, int[] g)
 {
@@ -31,17 +31,29 @@ int[] Sub(int[] f, int[] g)
   return result;
 }
 
-String Print(int[] f)
+string Print(int[] f) 
 {
+  Console.OutputEncoding = System.Text.Encoding.UTF8;
+  string[] pows = { "⁰", "¹", "²", "³", "⁴", "⁵", "⁶", "⁷", "⁸", "⁹"};
   string output = String.Empty;
-  for(int i=0; i<f.Length; i++)
+  for (int i = 0; i < f.Length; i++)
   {
-    if(f[i] != 0) { output += $"{f[i]}*x^{i}"; }
-    if(f[i] != 0 && i < f.Length -1) output += " + ";
+
+    int t = f[i];
+    if (f[i] == 0)  continue;
+    if (f[i] < 0) { output += " - "; }
+    else if (i != 0) { output += " + "; }
+
+    if (t < 0) t = -t;
+    if (i == 1) { output += $"{t}x"; }
+    if (i == 0) { output += $"{t}"; }
+    if (i != 1 && i != 0 && f[i] != 0) { output += $"{t}x{pows[i]}"; }
+    // if (flag && f[i] != 0 && i < f.Length - 1) output += " + ";
   }
 
   return output;
 }
+
 
 Console.WriteLine(Print(x));
 Console.WriteLine(Print(y));
