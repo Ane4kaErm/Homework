@@ -15,5 +15,15 @@ void CheckArray(string[] array, string[] arrayNew)
     }
 }
 
+void PrintArray(string[] array)
+{
+    for (int i = 0; i < array.Length; i++)
+    {
+        Console.Write($"{array[i]} ");
+    }
+    Console.WriteLine();
+}
 
+CheckArray(array, arrayNew);
+PrintArray(arrayNew);
 
